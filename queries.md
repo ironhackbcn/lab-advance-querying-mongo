@@ -22,7 +22,7 @@
 
 <!-- Your Code Goes Here -->
 
-### 6. All the companies that don't include the `partners` field.
+### 6. All the companies that don't have any `partners` (partners is an array).
 
 <!-- Your Code Goes Here -->
 
@@ -34,7 +34,7 @@
 
 <!-- Your Code Goes Here -->
 
-### 9. Order all the companies by their IPO price descendently.
+### 9. Order all the companies by their IPO valutaion_amount descendently.
 
 <!-- Your Code Goes Here -->
 
