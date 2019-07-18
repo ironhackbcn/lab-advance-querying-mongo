@@ -78,7 +78,7 @@ You already know how this goes, so let's start working:
 6. All the companies that don't have `partners`. (tip: `partners` is an array)
 7. All the companies that have a null type of value on the `category_code` field.
 8. All the companies that have at least 100 employees but less than 1000. Retrieve only the `name` and `number of employees` fields.
-9. Order all the companies by their IPO valuation_amount descendently.
+9. Order all the companies by their IPO valuation_amount descendently. You have to use limit.
 10. Retrieve the 10 companies with more employees, order by the `number of employees`
 11. All the companies founded on the second semester of the year. Limit your search to 1000 companies.
 12. All the companies that have been 'deadpooled' after the third year.
