@@ -22,7 +22,7 @@ db.companies.find({"ipo.valuation_amount": {$gte: 100000000},"founded_year": {$l
 
 ### 5. All the companies that have less than 1000 employees and have been founded before 2005. Order them by the number of employees and limit the search to 10 companies.
 
-<!-- Your Code Goes Here -->
+db.companies.find ({"number_of_employees":{$lt:1000}, "founded_year":{$lt:2005}},{name:1, _id:0,"number_of_employees":1}).limit(20).sort({"number_of_employees":-1}).pretty();
 
 ### 6. All the companies that don't have any `partners` (partners is an array).
 
