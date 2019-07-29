@@ -34,7 +34,7 @@ db.companies.find ({category_code : null},{name: 1, _id:0, "category_code:1});
 
 db.companies.find( {"number_of_employees": {$gte:100,$lt:1000}}, {name:1, _id:0, "number_of_employees":1})
 
-### 9. Order all the companies by their IPO valutaion_amount descendently.
+### 9. Order all the companies by their IPO valuation_amount descendently.
 
 <!-- Your Code Goes Here -->
 
