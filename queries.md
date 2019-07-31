@@ -47,25 +47,26 @@ db.companies.find ({},{name:1,  _id:0, number_of_employees:1}).limit(10).sort({n
 
 db.companies.find ({founded_month:{ $gte: 7}},{name:1,  _id:0, founded_month:1}).limit(1000);
 
-### 12. All the companies that have been 'deadpooled' after the third year.
+### 12. All the companies that have been ‘deadpooled’ after 2010.
 
-db.companies.find ({"deadpooled_year": {$gt:3}},{name:1, _id:0})
+db.companies.find ({"deadpooled_year": {$gt:2010}},{name:1, _id:0})
 
 ### 13. All the companies founded before 2000 that have and acquisition amount of more than 10.000.000
 
-db.companies.find ({"founded_year": {$lt:2000}, "adquisition.price_amount":{$gt: 10000000}});
+db.companies.find ({"founded_year": {$lt:2000}, "acquisition.price_amount":{$gt: 10000000}},{name: 1, _id:0});
 
 ### 14. All the companies that have been acquired after 2015, order by the acquisition amount, and retrieve only their `name` and `acquisiton` field.
 
-<!-- Your Code Goes Here -->
+db.companies.find({"acquisition.acquired_year": {$gt: 2005}}, {name: 1,_id:0, acquisition:1}).sort({"acquisition.price_amount": 1}).pretty();
 
 ### 15. Order the companies by their `founded year`, retrieving only their `name` and `founded year`.
 
-<!-- Your Code Goes Here -->
+db.companies.createIndex ({"founded_year":-1})
+db.companies.find({}, {name: 1, _id:0, founded_year: 1}).sort({founded_year: -1})
 
-### 16. All the companies that have been founded on the first seven days of the month, including the seventh. Sort them by their `aquisition price` descendently. Limit the search to 10 documents.
+### 16. All the companies that have been founded on the first seven days of the month, including the seventh. Sort them by their `acquisition price` descendently. Limit the search to 10 documents.
 
-<!-- Your Code Goes Here -->
+    db.companies.find({founded_day: {$lte: 7}},{name:1, _id:0,"founded_day": 1,  "acquisition.price_amount":1}).limit(10).sort({"acquisition.price_amount":-1})
 
 ### 17. All the companies on the 'web' `category` that have more than 4000 employees. Sort them by the amount of employees in ascendant order.
 
