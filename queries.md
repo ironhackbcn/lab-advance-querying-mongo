@@ -49,11 +49,11 @@ db.companies.find ({founded_month:{ $gte: 7}},{name:1,  _id:0, founded_month:1})
 
 ### 12. All the companies that have been 'deadpooled' after the third year.
 
-<!-- Your Code Goes Here -->
+db.companies.find ({"deadpooled_year": {$gt:3}},{name:1, _id:0})
 
 ### 13. All the companies founded before 2000 that have and acquisition amount of more than 10.000.000
 
-<!-- Your Code Goes Here -->
+db.companies.find ({"founded_year": {$lt:2000}, "adquisition.price_amount":{$gt: 10000000}});
 
 ### 14. All the companies that have been acquired after 2015, order by the acquisition amount, and retrieve only their `name` and `acquisiton` field.
 
