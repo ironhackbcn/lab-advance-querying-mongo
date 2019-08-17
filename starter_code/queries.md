@@ -65,32 +65,39 @@ db.companies.find({deadpooled_year: {$gt: 2010}}, {name: 1, deadpooled_year: 1, 
 ### 13. All the companies founded before 2000 that have and acquisition amount of more than 10.000.000
 
 <!-- Your Code Goes Here -->
-
+db.companies.find({founded_year: {$lt:2000}, "acquisition.price_amount":{$gt: 10000000}}, {name:1, _id:0}).pretty()
 
 ### 14. All the companies that have been acquired after 2015, order by the acquisition amount, and retrieve only their `name` and `acquisiton` field.
 
 <!-- Your Code Goes Here -->
+db.companies.find({"acquisition.acquired_year": {$gt: 2015}}, {name: 1, acquisition: 1, _id: 0}).sort({"acquisition.price_amount": -1}).pretty()
 
 ### 15. Order the companies by their `founded year`, retrieving only their `name` and `founded year`.
 
 <!-- Your Code Goes Here -->
+db.companies.find({},{name:1, _id:0, founded_year:1}).sort({founded_year:1}).pretty()
 
 ### 16. All the companies that have been founded on the first seven days of the month, including the seventh. Sort them by their `aquisition price` descendently. Limit the search to 10 documents.
 
 <!-- Your Code Goes Here -->
+db.companies.find({founded_day:{$gte:1}, founded_day: {$lte: 7}}).sort({"acquisition.price_amount":-1}).limit(10).pretty()
 
 ### 17. All the companies on the 'web' `category` that have more than 4000 employees. Sort them by the amount of employees in ascendant order.
 
 <!-- Your Code Goes Here -->
+ db.companies.find({category_code:"web", number_of_employees:{$gt:4000}}).sort({number_of_employees: 1}).pretty()
 
 ### 18. All the companies which their acquisition amount is more than 10.000.000, and currency are 'EUR'.
 
 <!-- Your Code Goes Here -->
+db.companies.find({"acquisition.price_amount": {$gt: 10000000}, "acquisition.price_currency_code": "EUR"}).pretty()
 
 ### 19. All the companies that have been acquired on the first trimester of the year. Limit the search to 10 companies, and retrieve only their `name` and `acquisition` fields.
 
 <!-- Your Code Goes Here -->
+db.companies.find({founded_month: {$lte: 3}}, {name: 1, acquisition: 1, _id:0}).limit(10).pretty()
 
 ### 20. All the companies that have been founded between 2000 and 2010, but have not been acquired before 2011.
 
 <!-- Your Code Goes Here -->
+db.companies.find({founded_year: {$gte:2000, $lte:2010},"acquisition.acquired_year": {$gt: 2011}}).pretty()
