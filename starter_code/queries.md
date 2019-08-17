@@ -66,6 +66,7 @@ db.companies.find({deadpooled_year: {$gt: 2010}}, {name: 1, deadpooled_year: 1, 
 
 <!-- Your Code Goes Here -->
 
+
 ### 14. All the companies that have been acquired after 2015, order by the acquisition amount, and retrieve only their `name` and `acquisiton` field.
 
 <!-- Your Code Goes Here -->
