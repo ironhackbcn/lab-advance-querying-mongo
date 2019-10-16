@@ -54,7 +54,7 @@
 
 <!-- Your Code Goes Here -->
 
-### 14. All the companies that have been acquired after 2015, order by the acquisition amount, and retrieve only their `name` and `acquisiton` field.
+### 14. All the companies that have been acquired after 2012, order by the acquisition amount, and retrieve only their `name` and `acquisiton` field.
 
 <!-- Your Code Goes Here -->
 
